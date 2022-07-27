@@ -3,9 +3,13 @@ import XCTest
 
 final class SwiftBowlingKataTests: XCTestCase {
 
+    private var game: BowlingGame!
+    
+    override func setUp() {
+        game = BowlingGame()
+    }
     
     func test_canRollGutterGame() {
-        var game = BowlingGame()
         
         // a gutter game is where a player scores nada
         // in this context there would be no extra go
@@ -20,7 +24,6 @@ final class SwiftBowlingKataTests: XCTestCase {
     }
     
     func test_CanRollAllOnes() {
-        var game = BowlingGame()
         
         for i in 0...19 {
             game.roll(1)
