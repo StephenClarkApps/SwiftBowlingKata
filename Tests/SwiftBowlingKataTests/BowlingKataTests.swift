@@ -18,4 +18,14 @@ final class SwiftBowlingKataTests: XCTestCase {
         
         XCTAssertEqual(0, game.score())
     }
+    
+    func test_CanRollAllOnes() {
+        var game = BowlingGame()
+        
+        for i in 0...19 {
+            game.roll(1)
+        }
+        
+        XCTAssertEqual(20, game.score())
+    }
 }
