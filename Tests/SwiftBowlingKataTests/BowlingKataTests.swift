@@ -20,6 +20,6 @@ final class SwiftBowlingKataTests: XCTestCase {
             game.roll(0)
         }
         
-        XCTAssertEqual(0, game.score)
+        XCTAssertEqual(0, game.score())
     }
 }

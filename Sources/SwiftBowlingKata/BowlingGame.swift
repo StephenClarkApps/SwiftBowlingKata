@@ -7,7 +7,13 @@
 
 import Foundation
 
-public class BowlingGame {
+public class BowlingGame: Game {
     
+    func roll(_ pins: Int) {
+    }
+    
+    func score() -> Int {
+        return 0
+    }
 }
 
