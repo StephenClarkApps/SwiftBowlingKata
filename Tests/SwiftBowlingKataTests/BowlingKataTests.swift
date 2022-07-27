@@ -16,19 +16,20 @@ final class SwiftBowlingKataTests: XCTestCase {
         // so the player would have two turns per frame
         // and there are 10 frames so 20 turns
         
-        for i in 0...19 {
-            game.roll(0)
-        }
-        
+        rollMany(pins: 0, rolls: 20)
         XCTAssertEqual(0, game.score())
     }
     
     func test_CanRollAllOnes() {
-        
-        for i in 0...19 {
-            game.roll(1)
-        }
-        
+        rollMany(pins: 1, rolls: 20)
         XCTAssertEqual(20, game.score())
+    }
+    
+    // MARK: - Helper Methods
+    private func rollMany(pins: Int, rolls: Int) {
+        
+        for i in 0...(rolls - 1) {
+            game.roll(pins)
+        }
     }
 }
