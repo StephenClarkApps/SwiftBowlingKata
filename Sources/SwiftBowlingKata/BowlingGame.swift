@@ -21,12 +21,12 @@ public class BowlingGame: Game {
             
             for _ in 0...9 { // (0...9 i.e. 10 frames)
                 
-                if (isStrike(rollIndex)) { // STRIKE
+                if (isStrike(rollIndex)) {
                     score += getStrikeScore(rollIndex)
                     frame += 1
                     rollIndex += 1
                     
-                } else if (isSpare(rollIndex)) { // SPARE
+                } else if (isSpare(rollIndex)) { 
                     score += getSpareScore(rollIndex)
                     frame += 1
                     rollIndex += 2

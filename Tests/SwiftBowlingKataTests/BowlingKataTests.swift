@@ -49,7 +49,7 @@ final class SwiftBowlingKataTests: XCTestCase {
     // MARK: - Helper Methods
     private func rollMany(pins: Int, rolls: Int) {
         
-        for i in 0...(rolls - 1) {
+        for _ in 0...(rolls - 1) {
             game.roll(pins)
         }
     }
