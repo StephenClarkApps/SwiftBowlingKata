@@ -9,7 +9,8 @@ import Foundation
 
 public class BowlingGame: Game {
     
-    private var rolls: [Int] = []
+    private var rolls: [Int] = [Int](repeating: 0, count: 20) 
+    private var currentRoll: Int = 0
     
     public var score: Int {
         get {
@@ -22,7 +23,8 @@ public class BowlingGame: Game {
     }
     
     func roll(_ pins: Int) {
-        rolls.append(pins)
+        rolls[currentRoll] = pins
+        currentRoll += 1
     }
     
 }
