@@ -21,16 +21,21 @@ public class BowlingGame: Game {
             
             for _ in 0...9 { // (0...9 i.e. 10 frames)
                 
-                // SPARE
-                if (isSpare(rollIndex)) {
+                if (rolls[rollIndex] == 10) { // STRIKE
+                    score += rolls[rollIndex] + rolls[rollIndex + 1] + rolls[rollIndex + 2]
+                    frame += 1
+                    rollIndex += 1
+                    
+                } else if (isSpare(rollIndex)) { // SPARE
                     score += getSpareScore(rollIndex)
+                    frame += 1
+                    rollIndex += 2
+                    
                 } else {
                     score += getStandardScore(rollIndex)
-                    
+                    frame += 1
+                    rollIndex += 2
                 }
-                
-                frame += 1
-                rollIndex += 2
             }
             return score
         }
