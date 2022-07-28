@@ -9,14 +9,17 @@ import Foundation
 
 public class BowlingGame: Game {
     
-    private var playerScore = 0
+    private var rolls: [Int] = []
+    
+    public var score: Int {
+        get {
+            return rolls.reduce(0, +)
+        }
+    }
     
     func roll(_ pins: Int) {
-        playerScore += pins
+        rolls.append(pins)
     }
     
-    func score() -> Int {
-        return playerScore
-    }
 }
 

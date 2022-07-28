@@ -17,12 +17,12 @@ final class SwiftBowlingKataTests: XCTestCase {
         // and there are 10 frames so 20 turns
         
         rollMany(pins: 0, rolls: 20)
-        XCTAssertEqual(0, game.score())
+        XCTAssertEqual(0, game.score)
     }
     
     func test_CanRollAllOnes() {
         rollMany(pins: 1, rolls: 20)
-        XCTAssertEqual(20, game.score())
+        XCTAssertEqual(20, game.score)
     }
     
 //    func test_CanRollSpare() {
