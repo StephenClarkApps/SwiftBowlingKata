@@ -41,6 +41,11 @@ final class SwiftBowlingKataTests: XCTestCase {
         XCTAssertEqual(24, game.score)
     }
     
+    func test_canRollPerfectGame() {
+        rollMany(pins: 10, rolls: 12)
+        XCTAssertEqual(300, game.score)
+    }
+    
     // MARK: - Helper Methods
     private func rollMany(pins: Int, rolls: Int) {
         
