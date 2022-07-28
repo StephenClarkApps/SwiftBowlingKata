@@ -12,7 +12,7 @@ public class BowlingGame: Game {
     private var rolls: [Int] = [Int](repeating: 0, count: 21)
     private var currentRoll: Int = 0
     
-    public var score: Int {
+    var score: Int {
         get {
             var score = 0
 
@@ -22,10 +22,10 @@ public class BowlingGame: Game {
             for _ in 0...9 { // (0...9 i.e. 10 frames)
                 
                 // SPARE
-                if (rolls[rollIndex] + rolls[rollIndex + 1] == 10) {
-                    score += rolls[rollIndex] + rolls[rollIndex + 1] + rolls[rollIndex + 2]
+                if (isSpare(rollIndex)) {
+                    score += getSpareScore(rollIndex)
                 } else {
-                    score += rolls[rollIndex] + rolls [rollIndex + 1]
+                    score += getStandardScore(rollIndex)
                     
                 }
                 
@@ -39,6 +39,19 @@ public class BowlingGame: Game {
     func roll(_ pins: Int) {
         rolls[currentRoll] = pins
         currentRoll += 1
+    }
+    
+    // MARK: - Helper Methods
+    fileprivate func isSpare(_ rollIndex: Int) -> Bool {
+        return rolls[rollIndex] + rolls[rollIndex + 1] == 10
+    }
+    
+    fileprivate func getSpareScore(_ rollIndex: Int) -> Int {
+        return rolls[rollIndex] + rolls[rollIndex + 1] + rolls[rollIndex + 2]
+    }
+    
+    fileprivate func getStandardScore(_ rollIndex: Int) -> Int {
+        return rolls[rollIndex] + rolls [rollIndex + 1]
     }
     
 }
