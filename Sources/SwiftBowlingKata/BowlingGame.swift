@@ -13,7 +13,11 @@ public class BowlingGame: Game {
     
     public var score: Int {
         get {
-            return rolls.reduce(0, +)
+            var score = 0
+            for i in 0...(rolls.count - 1) {
+                score += rolls[i]
+            }
+            return score
         }
     }
     
